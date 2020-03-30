@@ -30,10 +30,3 @@ hs_err_pid*
 # IntelliJ project files
 .idea
 *.iml
-out
-gen
-HELP.md
-mvnw
-mvnw.cmd
-pom.xml
-src/
