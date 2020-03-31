@@ -30,7 +30,7 @@ public class CustomerServiceimplTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        customerService = new CustomerServiceimpl(customerRepository, customerMapper);
+        customerService = new CustomerServiceImpl(customerRepository, customerMapper);
     }
 
     @Test

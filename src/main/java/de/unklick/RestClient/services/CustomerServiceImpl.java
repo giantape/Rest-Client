@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class CustomerServiceimpl implements CustomerService {
+public class CustomerServiceImpl implements CustomerService {
     private final CustomerMapper customerMapper;
     private final CustomerRepository customerRepository;
 
-    public CustomerServiceimpl(CustomerRepository customerRepository, CustomerMapper customerMapper){
+    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerMapper customerMapper){
         this.customerRepository = customerRepository;
         this.customerMapper = customerMapper;
     }
@@ -54,5 +54,26 @@ public class CustomerServiceimpl implements CustomerService {
         Customer customer = customerMapper.customerDtoToCustomer(customerDTO);
         customer.setId(id);
         return saveAndReturnDTO(customer);
+    }
+
+    @Override
+    public CustomerDTO patchCustomer(Long id, CustomerDTO customerDTO) {
+        return customerRepository.findById(id).map(customer -> {
+
+            if(customerDTO.getFirstname() != null){
+                customer.setFirstname(customerDTO.getFirstname());
+            }
+
+            if(customerDTO.getLastname() != null){
+                customer.setLastname(customerDTO.getLastname());
+            }
+
+            CustomerDTO returnDto = customerMapper.customerToCustomerDTO(customerRepository.save(customer));
+
+            returnDto.setCustomerUrl("/api/v1/customer/" + id);
+
+            return returnDto;
+
+        }).orElseThrow(RuntimeException::new); //todo implement better exception handling;
     }
 }
