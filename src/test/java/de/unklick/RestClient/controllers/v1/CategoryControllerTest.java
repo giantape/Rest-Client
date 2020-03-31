@@ -1,6 +1,7 @@
 package de.unklick.RestClient.controllers.v1;
 
 import de.unklick.RestClient.api.v1.model.CategoryDTO;
+import de.unklick.RestClient.controllers.RestResponseEntityExceptionHandler;
 import de.unklick.RestClient.services.CategoryService;
 import org.junit.Before;
 import org.junit.Test;
@@ -38,7 +39,9 @@ public class CategoryControllerTest {
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
-        mockMvc = MockMvcBuilders.standaloneSetup(categoryController).build();
+        mockMvc = MockMvcBuilders.standaloneSetup(categoryController)
+                .setControllerAdvice(new RestResponseEntityExceptionHandler())
+                .build();
 
     }
 
@@ -56,7 +59,7 @@ public class CategoryControllerTest {
 
         when(categoryService.getAllCategories()).thenReturn(categories);
 
-        mockMvc.perform(get("/api/v1/categories")
+        mockMvc.perform(get(CategoryController.BASE_URL)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.categories", hasSize(2)));
@@ -70,7 +73,7 @@ public class CategoryControllerTest {
 
         when(categoryService.getCategoryByName(anyString())).thenReturn(category1);
 
-        mockMvc.perform(get("/api/v1/categories/Giant")
+        mockMvc.perform(get(CategoryController.BASE_URL +"/Giant")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name", equalTo(NAME)));

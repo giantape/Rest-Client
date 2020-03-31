@@ -2,6 +2,7 @@ package de.unklick.RestClient.services;
 
 import de.unklick.RestClient.api.v1.mapper.CustomerMapper;
 import de.unklick.RestClient.api.v1.model.CustomerDTO;
+import de.unklick.RestClient.controllers.v1.CustomerController;
 import de.unklick.RestClient.domain.Customer;
 import de.unklick.RestClient.repositories.CustomerRepository;
 import org.junit.Before;
@@ -88,7 +89,7 @@ public class CustomerServiceimplTest {
 
         //then
         assertEquals(customerDTO.getFirstname(), savedDto.getFirstname());
-        assertEquals("/api/v1/customer/1", savedDto.getCustomerUrl());
+        assertEquals(CustomerController.BASE_URL +  "/1", savedDto.getCustomerUrl());
     }
 
     @Test
@@ -109,7 +110,7 @@ public class CustomerServiceimplTest {
 
         //then
         assertEquals(customerDTO.getFirstname(), savedDto.getFirstname());
-        assertEquals("/api/v1/customer/1", savedDto.getCustomerUrl());
+        assertEquals(CustomerController.BASE_URL +  "/1", savedDto.getCustomerUrl());
     }
 
     @Test
