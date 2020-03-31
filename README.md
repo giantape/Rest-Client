@@ -2,19 +2,42 @@
 # Rest-Client
 Spring boot Rest-Client  
 
-# Categories
+### Categories
 GET /api/v1/categories  
 GET /api/v1/categories/{id}  
 
-# Customers
+### Customers
 GET /api/v1/customers  
 POST /api/v1/customers  
 GET /api/v1/customers/{id}  
 PUT /api/v1/customers/{id}  
 PATCH /api/v1/customers/{id}  
-DELETE /api/v1/customers/{id}  
+DELETE /api/v1/customers/{id}  `
 
-# junit4 test
+### Example of GET /api/v1/customers
+```
+{
+    "customers": [
+        {
+            "firstname": "Giant",
+            "lastname": "Ape",
+            "customer_url": "/api/v1/customers/1"
+        },
+        {
+            "firstname": "Konstantin",
+            "lastname": "Diyachkov",
+            "customer_url": "/api/v1/customers/2"
+        },
+        {
+            "firstname": "Denés",
+            "lastname": "Albrech",
+            "customer_url": "/api/v1/customers/3"
+        }
+    ]
+}
+```
+
+### junit4 test
 /mappers/*  
 /controllers/*  
 /services/*  
