@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/giantape/Rest-Client.svg?style=svg)](https://circleci.com/gh/giantape/Rest-Client)
 # Rest-Client
 Spring boot Rest-Client  
 
