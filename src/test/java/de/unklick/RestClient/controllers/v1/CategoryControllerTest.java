@@ -1,6 +1,7 @@
 package de.unklick.RestClient.controllers.v1;
 
 import de.unklick.RestClient.api.v1.model.CategoryDTO;
+import de.unklick.RestClient.controllers.RestResponseEntityExceptionHandler;
 import de.unklick.RestClient.services.CategoryService;
 import org.junit.Before;
 import org.junit.Test;

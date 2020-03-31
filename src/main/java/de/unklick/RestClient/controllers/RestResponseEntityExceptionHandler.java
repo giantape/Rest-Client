@@ -1,4 +1,4 @@
-package de.unklick.RestClient.controllers.v1;
+package de.unklick.RestClient.controllers;
 
 import de.unklick.RestClient.services.ResourceNotFoundException;
 import org.springframework.http.HttpHeaders;
