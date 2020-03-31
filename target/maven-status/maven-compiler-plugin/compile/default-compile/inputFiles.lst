@@ -1,0 +1,10 @@
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/api/v1/model/CategoryListDTO.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/api/v1/model/CategoryDTO.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/domain/Category.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/services/CategoryService.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/services/CategoryServiceimpl.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/repositories/CategoryRepository.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/RestClientApplication.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/bootstrap/Bootstraping.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/api/v1/mapper/CategoryMapper.java
+/Users/gesangarmadi/Project/Java/Rest-Client/src/main/java/de/unklick/RestClient/controllers/v1/CategoryController.java
