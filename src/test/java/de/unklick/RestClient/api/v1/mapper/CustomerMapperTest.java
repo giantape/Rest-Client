@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public class CustomerMapperTest {
 
     public static final String FIRSTNAME = "Jimmy";
-    public static final String LASTNAME = "Fallon";
+    public static final String LASTNAME = "Pesto";
     CustomerMapper customerMapper = CustomerMapper.INSTANCE;
 
     @Test

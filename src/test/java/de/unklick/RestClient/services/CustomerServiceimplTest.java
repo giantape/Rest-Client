@@ -39,13 +39,13 @@ public class CustomerServiceimplTest {
         //given
         Customer customer1 = new Customer();
         customer1.setId(1l);
-        customer1.setFirstname("Michale");
-        customer1.setLastname("Weston");
+        customer1.setFirstname("Bob");
+        customer1.setLastname("Burger");
 
         Customer customer2 = new Customer();
         customer2.setId(2l);
-        customer2.setFirstname("Sam");
-        customer2.setLastname("Axe");
+        customer2.setFirstname("Jimmy");
+        customer2.setLastname("Pesto");
 
         when(customerRepository.findAll()).thenReturn(Arrays.asList(customer1, customer2));
 
@@ -62,22 +62,22 @@ public class CustomerServiceimplTest {
         //given
         Customer customer1 = new Customer();
         customer1.setId(1l);
-        customer1.setFirstname("Michale");
-        customer1.setLastname("Weston");
+        customer1.setFirstname("Jimmy");
+        customer1.setLastname("Pesto");
 
         when(customerRepository.findById(anyLong())).thenReturn(java.util.Optional.ofNullable(customer1));
 
         //when
         CustomerDTO customerDTO = customerService.getCustomerById(1L);
 
-        assertEquals("Michale", customerDTO.getFirstname());
+        assertEquals("Jimmy", customerDTO.getFirstname());
     }
 
     @Test
     public void createNewCustomer() throws Exception {
         //given
         CustomerDTO customerDTO = new CustomerDTO();
-        customerDTO.setFirstname("Abdull");
+        customerDTO.setFirstname("Giant");
 
         Customer saveCustomer = new Customer();
         saveCustomer.setFirstname(customerDTO.getFirstname());
@@ -97,7 +97,7 @@ public class CustomerServiceimplTest {
 
         //given
         CustomerDTO customerDTO = new CustomerDTO();
-        customerDTO.setFirstname("Abdull");
+        customerDTO.setFirstname("Giant");
 
         Customer saveCustomer = new Customer();
         saveCustomer.setFirstname(customerDTO.getFirstname());
