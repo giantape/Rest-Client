@@ -17,7 +17,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.when;
 
-class CustomerServiceimplTest {
+public class CustomerServiceimplTest {
 
     @Mock
     CustomerRepository customerRepository;
@@ -85,6 +85,27 @@ class CustomerServiceimplTest {
         when(customerRepository.save(any(Customer.class))).thenReturn(saveCustomer);
         //when
         CustomerDTO savedDto = customerService.createNewCustomer(customerDTO);
+
+        //then
+        assertEquals(customerDTO.getFirstname(), savedDto.getFirstname());
+        assertEquals("/api/v1/customer/1", savedDto.getCustomerUrl());
+    }
+
+    @Test
+    public void saveCustomerByDTO() throws Exception {
+
+        //given
+        CustomerDTO customerDTO = new CustomerDTO();
+        customerDTO.setFirstname("Abdull");
+
+        Customer saveCustomer = new Customer();
+        saveCustomer.setFirstname(customerDTO.getFirstname());
+        saveCustomer.setLastname(customerDTO.getLastname());
+        saveCustomer.setId(1l);
+        when(customerRepository.save(any(Customer.class))).thenReturn(saveCustomer);
+
+        //when
+        CustomerDTO savedDto = customerService.saveCustomerByDTO(1L, customerDTO);
 
         //then
         assertEquals(customerDTO.getFirstname(), savedDto.getFirstname());
