@@ -61,8 +61,8 @@ public class Bootstraping implements CommandLineRunner {
 
         Customer cus3 = new Customer();
         cus3.setId(3l);
-        cus2.setFirstname("Denés");
-        cus2.setLastname("Albrech");
+        cus3.setFirstname("Denés");
+        cus3.setLastname("Albrech");
 
         customerRepository.save(cus1);
         customerRepository.save(cus2);
