@@ -41,3 +41,5 @@ DELETE /api/v1/customers/{id}  `
 /mappers/*  
 /controllers/*  
 /services/*  
+
+<img src="http://unklick.de/images/all_test.png" width="600">
